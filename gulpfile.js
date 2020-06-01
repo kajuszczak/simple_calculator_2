@@ -30,6 +30,7 @@ const path = {
 
 const { src, dest } = require('gulp')
 const gulp = require('gulp')
+const webpack = require('webpack-stream')
 const browserSync = require('browser-sync').create()
 const fileInclude = require('gulp-file-include')
 const del = require('del')
@@ -38,8 +39,6 @@ const autoprefixer = require('gulp-autoprefixer')
 const mqpacker = require('gulp-group-css-media-queries')
 const cleanCss = require('gulp-clean-css')
 const rename = require('gulp-rename')
-const uglify = require('gulp-uglify-es').default;
-const babel = require("gulp-babel")
 const imageMin = require('gulp-imagemin')
 const webp = require('gulp-webp')
 const webpHtml = require('gulp-webp-html')
@@ -69,16 +68,33 @@ function html() {
 
 function js() {
     return src(path.src.js)
-        .pipe(fileInclude())
-        .pipe(babel())
-        .pipe(dest(path.build.js))
-        .pipe(babel())
-        .pipe(uglify())
-        .pipe(
-            rename({
-                extname: '.min.js'
-            }))
-        .pipe(dest(path.build.js))
+        .pipe(webpack({
+            mode: 'development',
+            output: {
+                filename: 'script.js'
+            },
+            watch: false,
+            devtool: "source-map",
+            module: {
+                rules: [{
+                    test: /\.m?js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]
+                            ]
+                        }
+                    }
+                }]
+            }
+        }))
+        .pipe(gulp.dest(path.build.js))
         .pipe(browserSync.stream())
 }
 
@@ -136,29 +152,7 @@ function fonts() {
         .pipe(dest(path.build.fonts))
 }
 
-gulp.task('svgSprite', function () {
-    return gulp.src([`${srcDir}/assets/img/svg/*.svg`])
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: '../icons/icons.svg',
-                    example: true
-                }
-            }
-        }))
-        .pipe(dest(path.build.img))
-})
-
-gulp.task('otf', function () {
-    return src([`${srcDir}/assets/**/*.otf`])
-        .pipe(fonter({
-            formats: ['ttf']
-        }))
-        .pipe(dest(`${srcDir}/assets/fonts`))
-})
-
 function fontsStyle() {
-
     let file_content = fs.readFileSync(srcDir + '/assets/scss/_fonts.scss');
     if (file_content == '') {
         fs.writeFile(srcDir + '/assets/scss/_fonts.scss', '', cb);
@@ -192,6 +186,55 @@ function watchFiles() {
 function clean() {
     return del(path.clean)
 }
+
+gulp.task('svgSprite', function () {
+    return gulp.src([`${srcDir}/assets/img/svg/*.svg`])
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: '../icons/icons.svg',
+                    example: true
+                }
+            }
+        }))
+        .pipe(dest(path.build.img))
+})
+
+gulp.task('otf', function () {
+    return src([`${srcDir}/assets/**/*.otf`])
+        .pipe(fonter({
+            formats: ['ttf']
+        }))
+        .pipe(dest(`${srcDir}/assets/fonts`))
+})
+
+gulp.task("build-prod-js", () => {
+    return gulp.src(path.src.js)
+        .pipe(webpack({
+            mode: 'production',
+            output: {
+                filename: 'script.js'
+            },
+            module: {
+                rules: [{
+                    test: /\.m?js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                ['@babel/preset-env', {
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]
+                            ]
+                        }
+                    }
+                }]
+            }
+        }))
+        .pipe(gulp.dest(path.build.js));
+});
 
 const build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle)
 const watch = gulp.parallel(build, watchFiles, browsersync)
