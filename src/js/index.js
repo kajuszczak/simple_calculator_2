@@ -1,1 +1,1 @@
-@@include('base.js')
+import './base'
