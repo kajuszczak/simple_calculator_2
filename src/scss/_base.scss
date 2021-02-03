@@ -3,6 +3,26 @@
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $window-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+html {
+  font-family: $font-stack;
+  font-size: 16px;
+}
+
 body,
 html {
   width: 100vw;

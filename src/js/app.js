@@ -7,13 +7,13 @@ const divideBtn = document.getElementById('btn-divide');
 const currentResultOutput = document.getElementById('current-result');
 const currentCalculationOutput = document.getElementById('current-calculation');
 
+const defaultResult = 0;
+let currentResult = defaultResult;
+
 function outputResult(result, text) {
   currentResultOutput.textContent = result;
   currentCalculationOutput.textContent = text;
 }
-
-const defaultResult = 0;
-let currentResult = defaultResult;
 
 // Gets input from input field
 function getUserNumberInput() {
