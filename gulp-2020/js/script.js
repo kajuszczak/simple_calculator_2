@@ -1610,6 +1610,7 @@ function getUserNumberInput() {
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   var calcDescription = "".concat(resultBeforeCalc, " ").concat(operator, " ").concat(calcNumber);
   outputResult(currentResult, calcDescription);
+  userInput.value = "";
 } // Addition
 
 

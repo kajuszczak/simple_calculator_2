@@ -10,7 +10,6 @@ const currentCalculationOutput = document.getElementById('current-calculation');
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-
 function outputResult(result, text) {
   currentResultOutput.textContent = result;
   currentCalculationOutput.textContent = text;
@@ -25,6 +24,7 @@ function getUserNumberInput() {
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
     const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
     outputResult(currentResult, calcDescription);
+    userInput.value = "";
 }
 
 // Addition
