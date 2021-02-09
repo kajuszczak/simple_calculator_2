@@ -16,6 +16,15 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
+
+  @media (max-width: 415px) {
+    padding: 1rem;
+  }
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+
 }
 
 html {

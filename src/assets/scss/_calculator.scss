@@ -4,6 +4,16 @@
     height: 40rem;
     width: 32rem;
 
+        @media (max-width: 415px) {
+            width: calc(100% - 24px);
+        }
+
+        @media (max-width: 768px) {
+            height: auto;
+            width: calc(100% - 264px);
+            align-items: center;
+        }
+
         &__title {
             width: 100%;
             font-weight: 500;
@@ -13,6 +23,14 @@
             display: flex;
             justify-content: center;
             text-align: center;
+
+            @media (max-width: 415px) {
+                font-size: 2rem;
+            }
+    
+            @media (max-width: 768px) {
+                padding: 2rem;
+            }
         }
 
         &__elements {
@@ -23,6 +41,14 @@
             align-items: center;
             text-align: center;
             flex-direction: column;
+
+            @media (max-width: 415px) {
+                padding: 1rem;
+            }
+
+            @media (max-width: 768px) {
+                padding: 2.5rem;
+            }
         }
 
         &__input {
@@ -37,6 +63,15 @@
             display: block;
             text-align: center;
             padding: 0.5rem;
+
+            @media (max-width: 415px) {
+                margin-bottom: 2rem;
+            }
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
                 &:focus {
                     outline: none;
                 }
@@ -47,6 +82,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
                 button {
                     height: 4rem;
                     width: 4rem;
@@ -56,6 +96,13 @@
                     background: $window-background;
                     border: none;
                     border-radius: 50%;
+
+                    @media (max-width: 415px) {
+                        height: 3rem;
+                        width: 3rem;
+                        font-size: 1.5rem;
+                    }
+
                     cursor: pointer;
                         &:focus {
                             outline: none;
@@ -78,6 +125,16 @@
     text-align: center;
     flex-direction: column;
     font-size: 1.5rem;
+
+    @media (max-width: 415px) {
+        padding-bottom: 2rem;
+    }    
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-bottom: 3rem;
+    }
+
         &__current__all {
             font-weight: 300;
             background-color: $window-background;
@@ -85,6 +142,10 @@
             padding: .5rem;
             margin: 0;
             width: 24rem;
+
+            @media (max-width: 415px) {
+                width: 100%;
+            }    
         }
 
         &__current__calculation {

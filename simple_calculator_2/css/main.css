@@ -180,6 +180,95 @@ a:active {
   margin: 0;
   padding: 1rem;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    padding: 1rem;
+  }
+
+  .calculator {
+    height: auto;
+    width: calc(100% - 264px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .calculator__title {
+    padding: 2rem;
+  }
+
+  .calculator__elements {
+    padding: 2.5rem;
+  }
+
+  .calculator__input {
+    width: 100%;
+  }
+
+  .calculator__actions {
+    width: 100%;
+  }
+
+  .results {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 415px) {
+  html,
+  body {
+    padding: 1rem;
+  }
+
+  .calculator {
+    width: calc(100% - 24px);
+  }
+
+  .calculator__title {
+    font-size: 2rem;
+  }
+
+  .calculator__elements {
+    padding: 1rem;
+  }
+
+  .calculator__input {
+    margin-bottom: 2rem;
+  }
+
+  .calculator__actions button {
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .results {
+    padding-bottom: 2rem;
+  }
+
+  .results__current__all {
+    width: 100%;
+  }
+}
 @supports (-webkit-appearance:none){
+
+}
+
+ @media (max-width: 768px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 415px){
+
+@supports (-webkit-appearance:none){
+
+}
 
 }
