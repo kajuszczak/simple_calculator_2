@@ -101,7 +101,7 @@ a:active {
   font-size: 2rem;
   background: #ffffff;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 24rem;
   display: block;
   text-align: center;
@@ -172,8 +172,8 @@ a:active {
 .results__current__all {
   font-weight: 300;
   background-color: #ffffff;
-  border-radius: .5rem;
-  padding: .5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   margin: 0;
   width: 24rem;
 }
@@ -231,6 +231,10 @@ a:active {
 }
 
 @media (max-width: 415px) {
+  .calculator {
+    width: 100%;
+  }
+
   .calculator__title {
     font-size: 1.5rem;
   }

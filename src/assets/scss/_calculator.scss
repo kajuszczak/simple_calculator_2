@@ -1,161 +1,160 @@
 .calculator {
-    background: $background-gradient;
-    border-radius: 2rem;
-    height: 40rem;
-    width: 32rem;
-    align-items: center;
+  background: $background-gradient;
+  border-radius: 2rem;
+  height: 40rem;
+  width: 32rem;
+  align-items: center;
 
-        @media (max-width: $tablet-size) {
-            height: auto;
-            width: calc(100% - padding);
-            padding: 1px 24px;
-        }
-        
-        &__title {
-            width: 100%;
-            font-weight: 500;
-            font-size: 2.5rem;
-            margin-top: 2rem;
-            padding: 2.5rem;
-            display: flex;
-            justify-content: center;
-            text-align: center;
+  @media (max-width: $tablet-size) {
+    height: auto;
+    width: calc(100% - padding);
+    padding: 1px 24px;
+  }
 
-            @media (max-width: $tablet-size) {
-                padding: 1rem;
-                font-size: 2rem;
-            }
+  @media (max-width: $phone-size) {
+    width: 100%;
+  }
 
-            @media (max-width: $phone-size) {
-                font-size: 1.5rem;
-            }
-    
-        }
+  &__title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 
-        &__elements {
-            font-weight: 300;
-            padding: 3rem 3rem 0 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
+    @media (max-width: $tablet-size) {
+      padding: 1rem;
+      font-size: 2rem;
+    }
 
-            @media (max-width: $tablet-size) {
-                padding: 2.5rem 2.5rem 0 2.5rem;
-            }
+    @media (max-width: $phone-size) {
+      font-size: 1.5rem;
+    }
+  }
 
-            @media (max-width: $phone-size) {
-                padding: 1rem 1rem 0 1rem;
-            }
-
-        }
-
-        &__input {
-            font-family: $font-stack;
-            font-weight: 300;
-            font-size: 2rem;
-            background: $window-background; 
-            border: none;
-            border-radius: .5rem;
-            // margin-bottom: 4rem;
-            width: 24rem;
-            display: block;
-            text-align: center;
-            padding: 0.5rem;
-
-            &:focus {
-                outline: none;
-            }
-
-            @media (max-width: $tablet-size) {
-                width: 100%;
-            }
-
-        }
-
-        &__actions {
-            width: 24rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 4rem 0 4rem 0;
-
-            @media (max-width: $tablet-size) {
-                width: 100%;   
-            }
-
-                &__btn {
-                    height: 4rem;
-                    width: 4rem;
-                    font-family: $font-stack;
-                    font-size: 2rem;
-                    font-weight: 300;
-                    background: $window-background;
-                    border: none;
-                    border-radius: 50%;
-
-                    cursor: pointer;
-                        &:focus {
-                            outline: none;
-                        }
-                        &:hover, :active {
-                            background: $pseudoclasses-color;
-                            border-color: $pseudoclasses-color;
-                            font-weight: 500;
-                        }
-
-                    @media (max-width: $tablet-size) {
-                        height: 4rem;
-                        width: 4rem;
-                        font-size: 2rem;
-                    }
-
-                    @media (max-width: $phone-size) {
-                        height: 3rem;
-                        width: 3rem;
-                    }
-
-                }
-        }
-}
-
-.results {
+  &__elements {
     font-weight: 300;
-    padding: 0 1rem 1rem 1rem;
+    padding: 3rem 3rem 0 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    font-size: 1.5rem;  
 
     @media (max-width: $tablet-size) {
-        width: 100%;
-        padding: 0 2.5rem 3rem 2.5rem;
+      padding: 2.5rem 2.5rem 0 2.5rem;
     }
 
     @media (max-width: $phone-size) {
-        padding: 0 1rem 2rem 1rem;
-    }  
+      padding: 1rem 1rem 0 1rem;
+    }
+  }
 
-        &__current__all {
-            font-weight: 300;
-            background-color: $window-background;
-            border-radius: .5rem;
-            padding: .5rem;
-            margin: 0;
-            width: 24rem;
+  &__input {
+    font-family: $font-stack;
+    font-weight: 300;
+    font-size: 2rem;
+    background: $window-background;
+    border: none;
+    border-radius: 0.5rem;
+    width: 24rem;
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
 
-            @media (max-width: $tablet-size) {
-                width: 100%;
-            }
+    &:focus {
+      outline: none;
+    }
 
-        }
-        &__current__calculation {
-            font-weight: 300;
-            margin: 0;
-            padding: 1rem;
-            font-size: 2rem;
-        }
+    @media (max-width: $tablet-size) {
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    width: 24rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0 4rem 0;
+
+    @media (max-width: $tablet-size) {
+      width: 100%;
+    }
+
+    &__btn {
+      height: 4rem;
+      width: 4rem;
+      font-family: $font-stack;
+      font-size: 2rem;
+      font-weight: 300;
+      background: $window-background;
+      border: none;
+      border-radius: 50%;
+
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:hover,
+      :active {
+        background: $pseudoclasses-color;
+        border-color: $pseudoclasses-color;
+        font-weight: 500;
+      }
+
+      @media (max-width: $tablet-size) {
+        height: 4rem;
+        width: 4rem;
+        font-size: 2rem;
+      }
+
+      @media (max-width: $phone-size) {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}
+
+.results {
+  font-weight: 300;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+
+  @media (max-width: $tablet-size) {
+    width: 100%;
+    padding: 0 2.5rem 3rem 2.5rem;
+  }
+
+  @media (max-width: $phone-size) {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  &__current__all {
+    font-weight: 300;
+    background-color: $window-background;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0;
+    width: 24rem;
+
+    @media (max-width: $tablet-size) {
+      width: 100%;
+    }
+  }
+  &__current__calculation {
+    font-weight: 300;
+    margin: 0;
+    padding: 1rem;
+    font-size: 2rem;
+  }
 }

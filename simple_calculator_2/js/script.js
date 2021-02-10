@@ -1563,9 +1563,9 @@ function testWebP(callback) {
 
 testWebP(function (support) {
   if (support == true) {
-    document.querySelector('body').classList.add('webp');
+    document.querySelector("body").classList.add("webp");
   } else {
-    document.querySelector('body').classList.add('no-webp');
+    document.querySelector("body").classList.add("no-webp");
   }
 });
 
@@ -1586,13 +1586,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_parse_int_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var userInput = document.getElementById('input-number');
-var addBtn = document.getElementById('btn-add');
-var subtractBtn = document.getElementById('btn-subtract');
-var multiplyBtn = document.getElementById('btn-multiply');
-var divideBtn = document.getElementById('btn-divide');
-var currentResultOutput = document.getElementById('current-result');
-var currentCalculationOutput = document.getElementById('current-calculation');
+var userInput = document.getElementById("input-number");
+var addBtn = document.getElementById("btn-add");
+var subtractBtn = document.getElementById("btn-subtract");
+var multiplyBtn = document.getElementById("btn-multiply");
+var divideBtn = document.getElementById("btn-divide");
+var currentResultOutput = document.getElementById("current-result");
+var currentCalculationOutput = document.getElementById("current-calculation");
 var defaultResult = 0;
 var currentResult = defaultResult;
 
@@ -1618,7 +1618,7 @@ function add() {
   var enteredNumber = getUserNumberInput();
   var initialResult = currentResult;
   currentResult += enteredNumber;
-  createAndWriteOutput('+', initialResult, enteredNumber);
+  createAndWriteOutput("+", initialResult, enteredNumber);
 } // Subtraction
 
 
@@ -1626,7 +1626,7 @@ function subtract() {
   var enteredNumber = getUserNumberInput();
   var initialResult = currentResult;
   currentResult -= enteredNumber;
-  createAndWriteOutput('-', initialResult, enteredNumber);
+  createAndWriteOutput("-", initialResult, enteredNumber);
 } // Multiplication
 
 
@@ -1634,7 +1634,7 @@ function multiply() {
   var enteredNumber = getUserNumberInput();
   var initialResult = currentResult;
   currentResult *= enteredNumber;
-  createAndWriteOutput('*', initialResult, enteredNumber);
+  createAndWriteOutput("*", initialResult, enteredNumber);
 } // Division
 
 
@@ -1642,13 +1642,13 @@ function divide() {
   var enteredNumber = getUserNumberInput();
   var initialResult = currentResult;
   currentResult /= enteredNumber;
-  createAndWriteOutput('/', initialResult, enteredNumber);
+  createAndWriteOutput("/", initialResult, enteredNumber);
 }
 
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
 
 /***/ }),
 
