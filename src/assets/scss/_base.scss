@@ -15,15 +15,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
 
-  @media (max-width: 415px) {
+  @media (max-width: $tablet-size) {
     padding: 1rem;
   }
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
-
 
 }
 
