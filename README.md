@@ -1,3 +1,3 @@
-# simple_calculator_2
+# simple_calculator
 
 https://kajuszczak.github.io/simple_calculator_2/
